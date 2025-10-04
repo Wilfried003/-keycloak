@@ -1,0 +1,27 @@
+# 🔹 Étape 1 – Mise en place & Bases de Keycloak
+
+Cette première étape a pour objectif de **découvrir les bases de Keycloak** : installation, création des premiers utilisateurs et intégration simple avec une application de test.
+
+---
+
+## 🚀 Objectifs
+- Installer Keycloak (Docker ou Docker Compose).
+- Accéder à la **console d’administration**.
+- Créer un **Realm** (espace de travail).
+- Créer un **Client** (application).
+- Créer quelques **Utilisateurs** de test.
+- Tester l’authentification et récupérer un **JWT**.
+- Intégrer une application simple avec Keycloak.
+
+---
+
+## 🛠️ Installation de Keycloak
+
+### Option 1 : Docker
+```bash
+docker run -d \
+  --name keycloak \
+  -p 8080:8080 \
+  -e KEYCLOAK_ADMIN=admin \
+  -e KEYCLOAK_ADMIN_PASSWORD=admin \
+  quay.io/keycloak/keycloak:25.0.0 start-dev
